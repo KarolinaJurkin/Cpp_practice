@@ -13,13 +13,12 @@ int main(void)
     double    srednia;
     int       counter;
 
-    cout << "Podaj wartosc stalej D roznej od 0:\n";
-    cin >> initial_D;
-    if (initial_D == 0)
-        {
-            cout << "Podana wartosc nie moze byc rowna 0.\n";
-            return (0);
-        }
+   do
+    {
+        cout << "Podaj wartosc stalej D roznej od 0:\n";
+        cin >> initial_D;
+    }
+    while (initial_D == 0);
     const int   D = initial_D;
     cout << "Podaj wartosc liczby calkowitej:\n";
     cin >> c;
