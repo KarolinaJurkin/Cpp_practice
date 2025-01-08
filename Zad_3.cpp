@@ -1,38 +1,31 @@
 #include <iostream>
-
 using namespace std;
 
 int	main(void)
 {
 	// Wszystkie zmienne beda zawsze wykorzystywane w tym programie, dlatego dla czytelnosci deklaruje je na gorze
 	
+	const int	D = 2;
+	const int	G = 20;
+	const int	N = 3;
 	int			k;
-	const int	D;
-	const int	G;
 	string		napis;
-	int			counter;
-	const int	N;
-	double		srednia;
-	
-	D = 1;
-	G = 20;
-	counter = 0;
-	N = 5;
+	int			counter = 0;
+	double		srednia = 0;
 	double		tab[N];
 	
 	do
 	{
-		cout << "Podaj liczbe calkowita pomiedzy 1 i 10: ";
+		cout << "Podaj liczbe calkowita pomiedzy " << D << " i " << G << ": ";
 		cin >> k;
-		cout << endl;
 	}
 	while (k < D || k > G);
 	
-	for (int i = 0; k < i; i++)
+	for (int i = 0; i < k; i++)
 	{
-		cout << "Napisz slowo lub zdanie:\n";
+		cout << "Wprowadz napis:";
 		cin >> napis;
-			if (napis[i] >= 'A' && napis[i] <= 'Z')
+			if (napis[0] >= 'A' && napis[0] <= 'Z')
 				counter++;
 	}
 	
@@ -42,11 +35,10 @@ int	main(void)
 	{
 		cout << "Podaj liczbe rzeczywista: ";
 		cin >> tab[i];
-		cout << endl;
 		srednia += tab[i];
 	}
 	
-	srednia = srednia /N;
+	srednia = srednia / N;
 	cout << "Srednia podanych liczb: " << srednia << endl;
 	
 	// Wykorzystuje ponownie zmienna counter nadpisujac jej wartosc
@@ -62,3 +54,4 @@ int	main(void)
 	cout << "Ilosc liczb wiekszych od sredniej: " << counter << endl;
 	return (0);
 }
+
