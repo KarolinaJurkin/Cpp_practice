@@ -3,14 +3,15 @@
 #include <iomanip>
 using namespace std;
 
-int	main(void)
-{
-	const int	w = 4, k = 5, G = 5;
-	struct		Sstudent
+struct	Sstudent
 	{
 		char	ini_1, ini_2;
 		double	ocena;
 	};
+
+int	main(void)
+{
+	const int	w = 4, k = 5, G = 5;
 	Sstudent	A[w][k];
 	
 	srand(time(0));
@@ -20,7 +21,7 @@ int	main(void)
 		{
 			A[i][j].ini_1 = 64 + rand() % (91 - 65);
 			A[i][j].ini_2 = 64 + rand() % (91 - 65);
-			A[i][j].ocena = rand() % 6;
+			A[i][j].ocena = 6 * rand() / (double) RAND_MAX;
 			cout << A[i][j].ini_1 << A[i][j].ini_2 << " ";
 			cout << fixed << setprecision(2) << setw(5) << A[i][j].ocena;
 		}
