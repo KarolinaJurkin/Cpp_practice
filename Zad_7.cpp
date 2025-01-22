@@ -1,4 +1,4 @@
-#include <streamio>
+#include <iostream>
 #include <ctime>
 
 using namespace std;
@@ -22,10 +22,12 @@ void	out(char A[w][k])
 	{
 		for (int j = 0; j < k; j++)
 		{
-			cout << A[i][j];
+			cout << A[i][j] << " ";
 		}
 		cout << endl;
 	}
+
+    cout << endl;
 }
 
 void	replace(char A[w][k], char c, char r)
@@ -36,13 +38,14 @@ void	replace(char A[w][k], char c, char r)
 		{
 			if (A[i][j] == r)
 					break;
-			else if (j == k)
+			else if (j == k - 1)
 			{
 				for (int l = 0; l < k; l++)
 			{
 				A[i][l] = c;
 			}
-		}
+		    }
+        }
 	}
 }
 
@@ -52,14 +55,17 @@ int	main(void)
 	
 	srand(time(0));
 	
-	random(Li[w][k], 65, 90);
-	random(Cy[w][k], 48, 57);
+	random(Li, 65, 90);
+	random(Cy, 48, 57);
 	
-	out(Li[w][k]);
-	out(Cy[w][k]);
+	out(Li);
+	out(Cy);
 	
-	replace(Li[w][k], '%', 'P');
-	replace(y[w][k], '&', '5');
+	replace(Li, '%', 'P');
+	replace(Cy, '&', '5');
+
+    out(Li);
+	out(Cy);
 	
 	return (0);
 }
